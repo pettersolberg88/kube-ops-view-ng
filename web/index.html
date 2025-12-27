@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+        <title>Kube Ops View NG</title>
+        <link href="favicon.svg" rel="icon" type="image/svg+xml"/>
+        <style>
+            body {
+                margin: 0;
+                overflow: hidden;
+                color: #ecf0f1;
+                background-color: #14181d;
+                font-family: Arial, sans-serif;
+            }
+
+            canvas {
+                display: block;
+            }
+
+            #top-menu {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                min-height: 40px;
+                background-color: #1e2329;
+                color: #ecf0f1;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                gap: 10px;
+                padding: 10px 20px;
+                box-sizing: border-box;
+                z-index: 1000;
+                border-bottom: 1px solid #2b3138;
+            }
+
+            #top-menu label {
+                font-size: 14px;
+                color: #c3ccd5;
+                white-space: nowrap;
+            }
+
+            #top-menu select {
+                background-color: #14181d;
+                color: #ecf0f1;
+                border: 1px solid #2b3138;
+                padding: 5px;
+                border-radius: 4px;
+            }
+
+            #top-menu select:hover {
+                border-color: #4c8dff;
+            }
+
+            #top-menu select:focus {
+                border-color: #4c8dff;
+                box-shadow: 0 0 0 1px rgba(76, 141, 255, 0.4);
+            }
+        </style>
+    </head>
+    <body>
+        <div id="top-menu">
+            <div class="menu-item">
+                <label for="sort-order">Sort Pods By:</label>
+                <select id="sort-order">
+                    <option value="name">Name</option>
+                    <option value="age">Age</option>
+                    <option value="cpu">CPU Request</option>
+                    <option value="memory">Memory Request</option>
+                    <option value="status">Status</option>
+                </select>
+            </div>
+            <div class="menu-item">
+                <label for="namespace-filter">Namespace:</label>
+                <select id="namespace-filter">
+                    <option value="all">All Namespaces</option>
+                </select>
+            </div>
+            <div class="menu-item">
+                <label for="controller-filter">Controller:</label>
+                <select id="controller-filter">
+                    <option value="all">All Types</option>
+                </select>
+            </div>
+        </div>
+        <div id="app"></div>
+        <script src="/src/main.ts" type="module"></script>
+    </body>
+</html>
