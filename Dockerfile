@@ -19,6 +19,13 @@ COPY internal ./internal
 RUN GOOS=${TARGETOS} GOARCH=${TARGETARCH} go build ./cmd/main.go
 
 FROM ubuntu AS runtime
+
+LABEL org.opencontainers.image.url https://github.com/pettersolberg88/kube-ops-view-ng
+LABEL org.opencontainers.image.documentation https://github.com/pettersolberg88/kube-ops-view-ng/blob/main/README.md
+LABEL org.opencontainers.image.source https://github.com/pettersolberg88/kube-ops-view-ng
+LABEL org.opencontainers.image.title kube-ops-view-ng
+LABEL org.opencontainers.image.description Lightweight Kubernetes cluster visualizer and dashboard.
+
 WORKDIR /app
 COPY --from=builder-golang /app/main kube-ops-view-ng
 RUN mkdir -p web/dist
