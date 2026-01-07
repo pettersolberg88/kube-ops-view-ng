@@ -26,6 +26,6 @@ COPY --from=node-builder /app/dist /app/web/dist
 COPY LICENSE LICENSE
 RUN echo "Sourcecode available at https://github.com/pettersolberg88/kube-ops-view-ng" > Source.txt
 
-CMD /app/kube-ops-view-ng
+ENTRYPOINT ["/app/kube-ops-view-ng"]
 
 USER 1000
