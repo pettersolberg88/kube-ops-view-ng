@@ -46,6 +46,10 @@ kubectl apply -f deploy/kube-ops-view-ng.yaml
 ## Credits
 Henning Jacobs for the original idea and the inspiration. https://codeberg.org/hjacobs
 
+Contributors:
+* [pettersolberg88](https://github.com/pettersolberg88)
+* [sklirg](https://github.com/sklirg)
+
 ## License
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
