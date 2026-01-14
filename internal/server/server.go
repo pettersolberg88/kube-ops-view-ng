@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"io"
 	"net/http"
+	"net/http/pprof"
 	"strings"
 	"time"
 
@@ -34,6 +35,10 @@ func (s *Server) routes() {
 	s.mux.HandleFunc("/api/ready", s.handleReady)
 	s.mux.HandleFunc("/api/snapshot", s.handleSnapshot)
 	s.mux.HandleFunc("/api/stream", s.handleStream)
+	s.mux.HandleFunc("/debug/pprof/", pprof.Index)
+	s.mux.HandleFunc("/debug/pprof/{action}", pprof.Index)
+	s.mux.HandleFunc("/debug/pprof/symbol", pprof.Symbol)
+	s.mux.HandleFunc("/debug/pprof/profile", pprof.Profile)
 
 	// Serve static files
 	fs := http.FileServer(http.Dir("web/dist"))
