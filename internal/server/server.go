@@ -127,7 +127,7 @@ func (s *Server) handleStream(w http.ResponseWriter, r *http.Request) {
 	var brotliWriter *brotli.Writer
 	if supportsBrotli {
 		w.Header().Set("Content-Encoding", "br")
-		brotliWriter = brotli.NewWriter(w)
+		brotliWriter = brotli.NewWriterLevel(w, 11)
 		writer = brotliWriter
 		defer brotliWriter.Close()
 	}
