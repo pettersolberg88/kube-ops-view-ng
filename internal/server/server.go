@@ -92,7 +92,10 @@ func (s *Server) handleSnapshot(w http.ResponseWriter, r *http.Request) {
 
 	if supportsBrotil {
 		w.Header().Set("Content-Encoding", "br")
-		bw := brotli.NewWriter(w)
+		bw := brotli.NewWriterOptions(w, brotli.WriterOptions{
+			Quality: 3,
+			LGWin:   21,
+		})
 		if err := json.NewEncoder(bw).Encode(snapshot); err != nil {
 			http.Error(w, err.Error(), http.StatusInternalServerError)
 			return
@@ -122,7 +125,10 @@ func (s *Server) handleStream(w http.ResponseWriter, r *http.Request) {
 	var brotliWriter *brotli.Writer
 	if supportsBrotli {
 		w.Header().Set("Content-Encoding", "br")
-		brotliWriter = brotli.NewWriter(w)
+		brotliWriter = brotli.NewWriterOptions(w, brotli.WriterOptions{
+			Quality: 3,
+			LGWin:   21,
+		})
 		writer = brotliWriter
 		defer brotliWriter.Close()
 	}
