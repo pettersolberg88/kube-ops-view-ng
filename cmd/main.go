@@ -5,8 +5,8 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/pso013/kube-ops-view-ng/internal/k8s"
-	"github.com/pso013/kube-ops-view-ng/internal/server"
+	"github.com/pettersolberg88/kube-ops-view-ng/internal/k8s"
+	"github.com/pettersolberg88/kube-ops-view-ng/internal/server"
 )
 
 func main() {

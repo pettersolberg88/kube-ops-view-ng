@@ -9,7 +9,7 @@ import (
 	"time"
 
 	"github.com/andybalholm/brotli"
-	"github.com/pso013/kube-ops-view-ng/internal/k8s"
+	"github.com/pettersolberg88/kube-ops-view-ng/internal/k8s"
 )
 
 type Server struct {
