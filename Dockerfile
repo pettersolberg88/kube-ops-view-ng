@@ -5,7 +5,7 @@ COPY web/ .
 RUN npm install
 RUN npm run build
 
-FROM --platform=$BUILDPLATFORM golang:1.25 AS builder-golang
+FROM --platform=$BUILDPLATFORM golang:1.27 AS builder-golang
 ARG TARGETOS
 ARG TARGETARCH
 RUN mkdir /app
