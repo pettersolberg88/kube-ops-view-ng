@@ -3,7 +3,7 @@ module github.com/pettersolberg88/kube-ops-view-ng
 go 1.27.0
 
 require (
-	github.com/andybalholm/brotli v1.2.1
+	github.com/andybalholm/brotli v1.2.7
 	k8s.io/api v0.37.2
 	k8s.io/apimachinery v0.37.2
 	k8s.io/client-go v0.37.2
