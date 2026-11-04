@@ -1,3 +1,9 @@
+# [v1.0.5](https://github.com/pettersolberg88/kube-ops-view-ng/releases/tag/v1.0.4) (2026-01-04)
+
+### Features
+
+* fix: Upgraded all dependencies to newest versions [pull/15](https://github.com/pettersolberg88/kube-ops-view-ng/pull/15) [pettersolberg88]
+
 # [v1.0.4](https://github.com/pettersolberg88/kube-ops-view-ng/releases/tag/v1.0.4) (2026-04-21)
 
 ### Features
